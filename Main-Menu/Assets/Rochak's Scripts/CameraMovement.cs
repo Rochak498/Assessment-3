@@ -1,42 +1,40 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    public Transform target;              // Player's body
-    public Vector3 offset;                // Offset from the player
-    public float smoothSpeed = 0.125f;    // Smooth camera movement
-    public float mouseSensitivity = 100f; // Sensitivity of the mouse
+    public Transform playerBody;              // The player object to follow and rotate
+    public Vector3 offset = new Vector3(0, 2, -4);  // Camera position offset
+    public float smoothSpeed = 10f;           // Camera follow smoothness
+    public float mouseSensitivity = 100f;     // Mouse look sensitivity
 
-    float xRotation = 0f;                 // Vertical rotation
+    private float xRotation = 0f;
 
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked; // Lock the mouse cursor
+        Cursor.lockState = CursorLockMode.Locked;  // Lock cursor in the center
     }
 
     void LateUpdate()
     {
-        if (target == null) return;
+        if (playerBody == null) return;
 
-        // Mouse input
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        // Get raw mouse input
+        float mouseX = Input.GetAxisRaw("Mouse X") * mouseSensitivity * Time.deltaTime;
+        float mouseY = Input.GetAxisRaw("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        // Vertical look (clamped to avoid flipping)
+        // Rotate player horizontally
+        playerBody.Rotate(Vector3.up * mouseX);
+
+        // Rotate camera vertically (up/down)
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -80f, 80f);
 
-        // Apply rotation to camera (up/down)
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        // Calculate final rotation for the camera
+        Quaternion camRotation = Quaternion.Euler(xRotation, playerBody.eulerAngles.y, 0);
+        transform.rotation = camRotation;
 
-        // Rotate the player horizontally (left/right)
-        target.Rotate(Vector3.up * mouseX);
-
-        // Smooth follow the player with offset
-        Vector3 desiredPosition = target.position + offset;
-        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
-        transform.position = smoothedPosition;
+        // Smooth follow the player
+        Vector3 targetPosition = playerBody.position + camRotation * offset;
+        transform.position = Vector3.Lerp(transform.position, targetPosition, smoothSpeed * Time.deltaTime);
     }
 }
