@@ -4,5 +4,29 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Main Menu/Main Menu.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Main Menu/Levels.unity
+    guid: e77cf974b35b6a14687fa14c788056ce
+  - enabled: 1
+    path: Assets/Main Menu/CREDITS.unity
+    guid: 3f21c50b8926e164aa29f1f67cf5a8f3
+  - enabled: 1
+    path: Assets/Main Menu/RoamingHero.unity
+    guid: 87cfc27d42f81b9428649ce710d919cd
+  - enabled: 1
+    path: Assets/Main Menu/Dinanath Scene.unity
+    guid: 41d35aca656b477428636a15d8a17c1f
+  - enabled: 1
+    path: Assets/Main Menu/BloomingFlower.unity
+    guid: e1c7c74d6ade7884d935fbefb1eecb0e
+  - enabled: 1
+    path: Assets/Main Menu/Niven game.unity
+    guid: 62159e7d745f0514c8651af087d374bd
+  - enabled: 1
+    path: Assets/Main Menu/EXITCONFIRMATION.unity
+    guid: e822a743ec419d54396c84ed2c620143
   m_configObjects: {}
