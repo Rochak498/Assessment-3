@@ -7,6 +7,6 @@ public class MainMenuButton : MonoBehaviour
     public void LoadMainMenu()
     {
         // Replace scene with the index of your Main Menu scene in Build Settings
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Levels");
     }
 }
