@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    public void LoadMainScene()
+    public void LoadMainLevel()
     {
-        SceneManager.LoadScene("BloomingFlower"); 
+        SceneManager.LoadScene("Levels");
     }
 
     public void QuitGame()
