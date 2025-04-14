@@ -9,11 +9,11 @@ EditorBuildSettings:
     path: Assets/Main Menu/Main Menu.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Main Menu/RoamingHero.unity
-    guid: 87cfc27d42f81b9428649ce710d919cd
-  - enabled: 1
     path: Assets/Main Menu/Levels.unity
     guid: e77cf974b35b6a14687fa14c788056ce
+  - enabled: 1
+    path: Assets/Main Menu/RoamingHero.unity
+    guid: 87cfc27d42f81b9428649ce710d919cd
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
