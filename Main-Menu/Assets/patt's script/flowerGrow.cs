@@ -67,7 +67,7 @@ public class flowerGrow : MonoBehaviour
         if (roseGrown && lotusGrown && jasmineGrown)
         {
             Debug.Log("✅ All flowers grown. Loading End Scene...");
-            SceneManager.LoadScene("EndScene"); 
+            SceneManager.LoadScene("BloomingFlowerEndScene"); 
 
         }
     }

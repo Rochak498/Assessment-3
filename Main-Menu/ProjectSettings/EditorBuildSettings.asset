@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Main Menu/EXITCONFIRMATION.unity
     guid: e822a743ec419d54396c84ed2c620143
+  - enabled: 1
+    path: Assets/Main Menu/BloomingFlowerEndScene.unity
+    guid: 11ccd2ef2cab2a94f990f88d1300bc86
   m_configObjects: {}

@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    public void LoadMainLevel()
+    public void LoadMainScene()
     {
-        SceneManager.LoadScene("Levels");
+        SceneManager.LoadScene("BloomingFlower"); 
     }
 
     public void QuitGame()
@@ -16,8 +16,19 @@ public class SceneLoader : MonoBehaviour
         Debug.Log("Quit Game"); // For editor testing
     }
 
-    public void LoadBloomingFlowerScene()
+    public void LoadEndScene()
     {
-        SceneManager.LoadScene("BloomingFlower"); // make sure the name matches your scene name!
+        SceneManager.LoadScene("BloomingFlowerEndScene");
+    }
+
+    // Call this to go back to MainMenu
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void LoadLevel()
+    {
+        SceneManager.LoadScene("Levels");
     }
 }
