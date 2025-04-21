@@ -9,7 +9,7 @@ public class growflowers : MonoBehaviour
     public GameObject lotus;
     public GameObject jasmine;
 
-    public float growAmount = 6f;  // scale multiplier (1.5x larger)
+    public float growAmount = 4f;  // scale multiplier (1.5x larger)
 
     private bool roseGrown = false;
     private bool lotusGrown = false;
