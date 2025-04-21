@@ -24,7 +24,7 @@ public class SceneLoader : MonoBehaviour
     // Call this to go back to MainMenu
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Main Menu");
     }
 
     public void LoadLevel()
